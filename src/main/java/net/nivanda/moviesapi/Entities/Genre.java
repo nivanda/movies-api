@@ -39,4 +39,14 @@ public class Genre {
     public void setMovies(Set<Movie> movies) {
         this.movies = movies;
     }
+
+    public void addMovie(Movie movie) {
+        this.movies.add(movie);
+        movie.getGenres().add(this);
+    }
+
+    public void removeMovie(Movie movie) {
+        this.movies.remove(movie);
+        movie.getGenres().remove(this);
+    }
 }
