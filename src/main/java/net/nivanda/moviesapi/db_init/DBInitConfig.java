@@ -1,6 +1,6 @@
 package net.nivanda.moviesapi.db_init;
 
-import net.nivanda.moviesapi.Repositories.MovieRepository;
+import net.nivanda.moviesapi.repository.MovieRepository;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

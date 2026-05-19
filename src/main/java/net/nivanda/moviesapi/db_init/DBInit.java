@@ -1,12 +1,11 @@
 package net.nivanda.moviesapi.db_init;
 
-import net.nivanda.moviesapi.Entities.Actor;
-import net.nivanda.moviesapi.Entities.Genre;
-import net.nivanda.moviesapi.Entities.Movie;
-import net.nivanda.moviesapi.Repositories.ActorRepository;
-import net.nivanda.moviesapi.Repositories.GenreRepository;
-import net.nivanda.moviesapi.Repositories.MovieRepository;
-import org.aspectj.weaver.ast.And;
+import net.nivanda.moviesapi.entity.Actor;
+import net.nivanda.moviesapi.entity.Genre;
+import net.nivanda.moviesapi.entity.Movie;
+import net.nivanda.moviesapi.repository.ActorRepository;
+import net.nivanda.moviesapi.repository.GenreRepository;
+import net.nivanda.moviesapi.repository.MovieRepository;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;

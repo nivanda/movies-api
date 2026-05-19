@@ -1,4 +1,4 @@
-package net.nivanda.moviesapi.Entities;
+package net.nivanda.moviesapi.entity;
 
 
 import jakarta.persistence.*;
