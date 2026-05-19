@@ -20,11 +20,7 @@ public class Actor {
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private LocalDate birthDate;
 
-    @ManyToMany
-    @JoinTable(
-            name = "actors_movies",
-            joinColumns = @JoinColumn(name = "actor_id"),
-            inverseJoinColumns = @JoinColumn(name = "movie_id"))
+    @ManyToMany(mappedBy = "actors")
     private Set<Movie> movies = new HashSet<>();
 
     public Actor() {}
