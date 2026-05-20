@@ -20,7 +20,7 @@ public interface ActorService {
 
     Actor patchBirthDate(Long id, LocalDate birthDate);
 
-    Actor patchMovies(Long actorId, List<Long> movieIDs);
+    Actor patchMovies(Long id, List<Long> movieIDs);
 
     List<Movie> getMoviesByActorId(Long id);
 
