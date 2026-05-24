@@ -18,7 +18,7 @@ public class DBInitConfig {
         String path = dataSourceUrl.replace("jdbc:sqlite:", "");
         File dbFile = new File(path);
 
-        boolean existed = !dbFile.exists() || movieRepository.count() == 0;
-        return existed;
+        boolean existed = dbFile.exists();
+        return !existed;
     }
 }
