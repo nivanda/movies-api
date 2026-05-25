@@ -31,4 +31,5 @@ public class ActorController {
     public Actor getOne(@PathVariable Long id) {
         return service.findById(id);
     }
+
 }
