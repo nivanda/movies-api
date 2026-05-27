@@ -6,11 +6,13 @@ import net.nivanda.moviesapi.entity.Movie;
 import net.nivanda.moviesapi.repository.ActorRepository;
 import net.nivanda.moviesapi.repository.GenreRepository;
 import net.nivanda.moviesapi.repository.MovieRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
 
+@Service
 public class MovieServiceImpl implements MovieService{
 
     private final MovieRepository repo;
