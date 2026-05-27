@@ -18,15 +18,7 @@ public interface MovieService {
 
     Movie create(Movie movie);
 
-    Movie patchTitle(Long id, String title);
-
-    Movie patchReleaseYear(Long id, int releaseYear);
-
-    Movie patchDuration(Long id, int duration);
-
-    Movie patchGenres(Long id, List<Long> genreIDs);
-
-    Movie patchActors(Long id, List<Long> actorIDs);
+    Movie update(Long id, Movie updated);
 
     List<Actor> getActorsByMovieId(Long id);
 
