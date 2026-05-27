@@ -14,11 +14,9 @@ import java.util.Set;
 public class GenreServiceImpl implements GenreService{
 
     private final GenreRepository repo;
-    private final MovieRepository movieRepo;
 
-    public GenreServiceImpl(GenreRepository repo, MovieRepository movieRepo) {
+    public GenreServiceImpl(GenreRepository repo) {
         this.repo = repo;
-        this.movieRepo = movieRepo;
     }
 
     @Override
@@ -37,37 +35,10 @@ public class GenreServiceImpl implements GenreService{
     }
 
     @Override
-    public Genre patchName(Long id, String name) {
+    public Genre update(Long id, Genre updated) {
         Genre genre = repo.findById(id).orElseThrow();
-        genre.setName(name);
-
-        return repo.save(genre);
-    }
-
-    @Override
-    public Genre patchMovies(Long id, List<Long> movieIDs) {
-        Genre genre = repo.findById(id).orElseThrow();
-        Set<Movie> originalMovies = genre.getMovies();
-        List<Movie> moviesToAdd = new ArrayList<>();
-        List<Movie> moviesToRemove = new ArrayList<>();
-
-        for (Long movieId : movieIDs) {
-            Movie movie = movieRepo.findById(movieId).orElseThrow();
-            if (!originalMovies.contains(movie)) {
-                moviesToAdd.add(movie);
-            }
-        }
-
-        for (Movie originalMovie : originalMovies) {
-            boolean movieFound = false;
-            for (Long movieId : movieIDs) {
-                movieFound = originalMovie == movieRepo.findById(movieId).orElseThrow();
-            }
-            if (!movieFound) moviesToRemove.add(originalMovie);
-        }
-
-        for (Movie movie : moviesToAdd) genre.addMovie(movie);
-        for (Movie movie : moviesToRemove) genre.removeMovie(movie);
+        genre.setName(updated.getName());
+        genre.setMovies(updated.getMovies());
 
         return repo.save(genre);
     }
