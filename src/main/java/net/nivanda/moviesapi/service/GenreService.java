@@ -13,9 +13,7 @@ public interface GenreService {
 
     Genre create(Genre genre);
 
-    Genre patchName(Long id, String name);
-
-    Genre patchMovies(Long id, List<Long> movieIDs);
+    Genre update(Long id, Genre updated);
 
     List<Movie> getMoviesByGenreId(Long id);
 
