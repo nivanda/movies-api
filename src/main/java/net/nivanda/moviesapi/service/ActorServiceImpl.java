@@ -16,11 +16,9 @@ import java.util.Set;
 public class ActorServiceImpl implements ActorService {
 
     private final ActorRepository repo;
-    private final MovieRepository movieRepo;
 
-    public ActorServiceImpl(ActorRepository repo, MovieRepository movieRepo) {
+    public ActorServiceImpl(ActorRepository repo) {
         this.repo = repo;
-        this.movieRepo = movieRepo;
     }
 
     @Override
@@ -51,45 +49,11 @@ public class ActorServiceImpl implements ActorService {
     }
 
     @Override
-    public Actor patchName(Long id, String name) {
+    public Actor update(Long id, Actor updated) {
         Actor actor = repo.findById(id).orElseThrow();
-        actor.setName(name);
-
-        return repo.save(actor);
-    }
-
-    @Override
-    public Actor patchBirthDate(Long id, LocalDate birthDate) {
-        Actor actor = repo.findById(id).orElseThrow();
-        actor.setBirthDate(birthDate);
-
-        return repo.save(actor);
-    }
-
-    @Override
-    public Actor patchMovies(Long id, List<Long> movieIDs) {
-        Actor actor = repo.findById(id).orElseThrow();
-        Set<Movie> originalMovies = actor.getMovies();
-        List<Movie> moviesToAdd = new ArrayList<>();
-        List<Movie> moviesToRemove = new ArrayList<>();
-
-        for (Long movieId : movieIDs) {
-            Movie movie = movieRepo.findById(movieId).orElseThrow();
-            if (!originalMovies.contains(movie)) {
-                moviesToAdd.add(movie);
-            }
-        }
-
-        for (Movie originalMovie : originalMovies) {
-            boolean movieFound = false;
-            for (Long movieId : movieIDs) {
-                movieFound = originalMovie == movieRepo.findById(movieId).orElseThrow();
-            }
-            if (!movieFound) moviesToRemove.add(originalMovie);
-        }
-
-        for (Movie movie : moviesToAdd) actor.addMovie(movie);
-        for (Movie movie : moviesToRemove) actor.removeMovie(movie);
+        actor.setName(updated.getName());
+        actor.setBirthDate(updated.getBirthDate());
+        actor.setMovies(updated.getMovies());
 
         return repo.save(actor);
     }
