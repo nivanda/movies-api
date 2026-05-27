@@ -16,11 +16,7 @@ public interface ActorService {
 
     Actor create(Actor actor);
 
-    Actor patchName(Long id, String name);
-
-    Actor patchBirthDate(Long id, LocalDate birthDate);
-
-    Actor patchMovies(Long id, List<Long> movieIDs);
+    Actor update(Long id, Actor updated);
 
     List<Movie> getMoviesByActorId(Long id);
 
