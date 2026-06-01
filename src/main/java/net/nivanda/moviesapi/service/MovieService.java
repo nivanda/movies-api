@@ -14,7 +14,7 @@ public interface MovieService {
 
     List<Movie> filterByGenre(Long id);
 
-    List<Movie> filterByReleaseYear(int releaseYear);
+    List<Movie> filterByReleaseYear(Integer releaseYear);
 
     Movie create(Movie movie);
 
