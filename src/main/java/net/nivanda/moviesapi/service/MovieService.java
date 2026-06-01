@@ -16,6 +16,8 @@ public interface MovieService {
 
     List<Movie> filterByReleaseYear(Integer releaseYear);
 
+    List<Movie> filterByActor(Long id);
+
     Movie create(Movie movie);
 
     Movie update(Long id, Movie updated);

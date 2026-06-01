@@ -17,10 +17,12 @@ public class MovieServiceImpl implements MovieService{
 
     private final MovieRepository repo;
     private final GenreRepository genreRepo;
+    private final ActorRepository actorRepo;
 
-    public MovieServiceImpl(MovieRepository repo, GenreRepository genreRepo) {
+    public MovieServiceImpl(MovieRepository repo, GenreRepository genreRepo, ActorRepository actorRepo) {
         this.repo = repo;
         this.genreRepo = genreRepo;
+        this.actorRepo = actorRepo;
     }
 
     @Override
@@ -48,6 +50,11 @@ public class MovieServiceImpl implements MovieService{
         }
 
         return filteredMovies;
+    }
+
+    @Override
+    public List<Movie> filterByActor(Long id) {
+        return new ArrayList<>(actorRepo.findById(id).orElseThrow().getMovies());
     }
 
     @Override
