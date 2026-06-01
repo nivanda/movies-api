@@ -3,12 +3,10 @@ package net.nivanda.moviesapi.service;
 import net.nivanda.moviesapi.entity.Genre;
 import net.nivanda.moviesapi.entity.Movie;
 import net.nivanda.moviesapi.repository.GenreRepository;
-import net.nivanda.moviesapi.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class GenreServiceImpl implements GenreService{

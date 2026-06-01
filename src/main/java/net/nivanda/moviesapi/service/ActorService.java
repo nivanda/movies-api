@@ -3,7 +3,6 @@ package net.nivanda.moviesapi.service;
 import net.nivanda.moviesapi.entity.Actor;
 import net.nivanda.moviesapi.entity.Movie;
 
-import java.time.LocalDate;
 import java.util.List;
 
 public interface ActorService {

@@ -4,13 +4,11 @@ package net.nivanda.moviesapi.service;
 import net.nivanda.moviesapi.entity.Actor;
 import net.nivanda.moviesapi.entity.Movie;
 import net.nivanda.moviesapi.repository.ActorRepository;
-import net.nivanda.moviesapi.repository.MovieRepository;
 import org.springframework.stereotype.Service;
 
-import java.time.LocalDate;
+
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 @Service
 public class ActorServiceImpl implements ActorService {

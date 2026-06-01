@@ -1,6 +1,5 @@
 package net.nivanda.moviesapi.patch_dto;
 
-import java.time.LocalDate;
 import java.util.Set;
 
 public class MoviePatchDTO {
