@@ -1,9 +1,7 @@
 package net.nivanda.moviesapi.controller;
 
-import net.nivanda.moviesapi.entity.Actor;
 import net.nivanda.moviesapi.entity.Genre;
 import net.nivanda.moviesapi.entity.Movie;
-import net.nivanda.moviesapi.patch_dto.ActorPatchDTO;
 import net.nivanda.moviesapi.patch_dto.GenrePatchDTO;
 import net.nivanda.moviesapi.service.GenreService;
 import net.nivanda.moviesapi.service.MovieService;
