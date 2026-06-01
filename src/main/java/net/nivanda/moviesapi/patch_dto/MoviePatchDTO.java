@@ -5,8 +5,8 @@ import java.util.Set;
 
 public class MoviePatchDTO {
     private String title;
-    private int releaseYear;
-    private int duration;
+    private Integer releaseYear;
+    private Integer duration;
     private Set<Long> actorIDs;
     private Set<Long> genreIDs;
 
@@ -18,19 +18,19 @@ public class MoviePatchDTO {
         this.title = title;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
-    public int getDuration() {
+    public Integer getDuration() {
         return duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 
