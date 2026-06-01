@@ -15,9 +15,9 @@ public class Movie {
 
     private String title;
 
-    private int releaseYear;
+    private Integer releaseYear;
 
-    private int duration;
+    private Integer duration;
 
     @ManyToMany
     @JoinTable(
@@ -35,7 +35,7 @@ public class Movie {
 
     public Movie() {}
 
-    public Movie(String title, int releaseYear, int duration) {
+    public Movie(String title, Integer releaseYear, Integer duration) {
         this.title = title;
         this.releaseYear = releaseYear;
         this.duration = duration;
@@ -49,19 +49,19 @@ public class Movie {
         this.title = title;
     }
 
-    public int getReleaseYear() {
+    public Integer getReleaseYear() {
         return this.releaseYear;
     }
 
-    public void setReleaseYear(int releaseYear) {
+    public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
 
-    public int getDuration() {
+    public Integer getDuration() {
         return this.duration;
     }
 
-    public void setDuration(int duration) {
+    public void setDuration(Integer duration) {
         this.duration = duration;
     }
 
