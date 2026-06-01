@@ -39,7 +39,7 @@ public class MovieServiceImpl implements MovieService{
     }
 
     @Override
-    public List<Movie> filterByReleaseYear(int releaseYear) {
+    public List<Movie> filterByReleaseYear(Integer releaseYear) {
         List<Movie> allMovies = repo.findAll();
         List<Movie> filteredMovies = new ArrayList<>();
 
